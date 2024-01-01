@@ -1,0 +1,65 @@
+[debug] [2024-01-01T07:32:05.103Z] ----------------------------------------------------------------------
+[debug] [2024-01-01T07:32:05.107Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sohel Datta\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-01-01T07:32:05.108Z] CLI Version:   13.0.2
+[debug] [2024-01-01T07:32:05.108Z] Platform:      win32
+[debug] [2024-01-01T07:32:05.109Z] Node Version:  v18.17.1
+[debug] [2024-01-01T07:32:05.116Z] Time:          Mon Jan 01 2024 13:02:05 GMT+0530 (India Standard Time)
+[debug] [2024-01-01T07:32:05.117Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-01T07:32:05.130Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-01T07:32:05.131Z] > authorizing via signed-in user (soheldatta17@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Sohel Datta\OneDrive\Desktop\React js tut\my-appy
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-01-01T07:33:19.333Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-01-01T07:33:20.210Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-01-01T07:33:20.210Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project fir-course-c2fc5 (firebase-course) 
+[info] 
+=== Hosting Setup
+[debug] [2024-01-01T07:33:48.282Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-course-c2fc5 [none]
+[debug] [2024-01-01T07:33:48.801Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-course-c2fc5 200
+[debug] [2024-01-01T07:33:48.802Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-course-c2fc5 {"projectId":"fir-course-c2fc5","projectNumber":"3294033420","displayName":"firebase-course","name":"projects/fir-course-c2fc5","resources":{"hostingSite":"fir-course-c2fc5","storageBucket":"fir-course-c2fc5.appspot.com","locationId":"asia-south1"},"state":"ACTIVE","etag":"1_c04f3153-7d7f-4b27-ab45-2103df6d137c"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote public/404.html 
+[debug] [2024-01-01T07:34:58.810Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2024-01-01T07:34:59.113Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2024-01-01T07:34:59.113Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.7.1","browserURL":"https://www.gstatic.com/firebasejs/10.7.1/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.7.1/firebase.tgz"},"live":{"version":"10.7","browserURL":"https://www.gstatic.com/firebasejs/live/10.7/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.7/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth/cordova.js","functions":"https://www.gstatic.com/firebasejs/10.7.1/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.7.1/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.7.1/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.7.1/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.memory.js"}}
+[info] i  Skipping write of public/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\Sohel Datta\OneDrive\Desktop\React js tut\my-appy 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=485688087&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2024-01-01T07:35:43.118Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-01-01T07:35:43.119Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-01-01T07:35:43.634Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-01-01T07:35:43.634Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2024-01-01T07:35:43.646Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2024-01-01T07:35:44.189Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2024-01-01T07:35:44.190Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"soheldatta17","id":113031588,"node_id":"U_kgDOBry5pA","avatar_url":"https://avatars.githubusercontent.com/u/113031588?v=4","gravatar_id":"","url":"https://api.github.com/users/soheldatta17","html_url":"https://github.com/soheldatta17","followers_url":"https://api.github.com/users/soheldatta17/followers","following_url":"https://api.github.com/users/soheldatta17/following{/other_user}","gists_url":"https://api.github.com/users/soheldatta17/gists{/gist_id}","starred_url":"https://api.github.com/users/soheldatta17/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/soheldatta17/subscriptions","organizations_url":"https://api.github.com/users/soheldatta17/orgs","repos_url":"https://api.github.com/users/soheldatta17/repos","events_url":"https://api.github.com/users/soheldatta17/events{/privacy}","received_events_url":"https://api.github.com/users/soheldatta17/received_events","type":"User","site_admin":false,"name":"Sohel Datta","company":null,"blog":"","location":"KOLKATA, INDIA","email":"soheldatta17@gmail.com","hireable":null,"bio":null,"twitter_username":null,"public_repos":51,"public_gists":0,"followers":0,"following":0,"created_at":"2022-09-07T12:25:15Z","updated_at":"2023-12-13T16:47:33Z","private_gists":0,"total_private_repos":19,"owned_private_repos":19,"disk_usage":59280,"collaborators":2,"two_factor_authentication":true,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as soheldatta17 
+[info] 

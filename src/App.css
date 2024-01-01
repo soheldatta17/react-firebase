@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #fce6ef; /* Light pink background */
+}
+
+.app {
+  text-align: center;
+}
+
+h1, p {
+  color: #333; /* Dark text color */
+  font-size: larger;
+}
+
+input, button {
+  padding: 10px;
+  margin-top: 15px;
+  display: block;
+  width: 200px; /* Adjust width as needed */
+  border: 1px solid #ccc; /* Add a border for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
+}
+
+button {
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text color */
+  cursor: pointer;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%; /* Circular images */
+}
+
+/* Additional styles for checkbox */
+input[type="checkbox"] {
+  margin-top: 10px; /* Add right margin for spacing */
+}
+
+/* Center the checkbox label */
+/* label.checkbox-label {
+  display: flex;
+  align-items: center;
+} */
+
+/* Optional: Add styling for the checkbox itself */
+input[type="checkbox"] + label.checkbox-label::before {
+  content: '\2713'; /* Unicode checkmark character */
+  font-size: 18px;
+  margin-right: 5px;
+  color: #4caf50; /* Green color for checkmark */
+}
