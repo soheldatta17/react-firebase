@@ -158,6 +158,7 @@ export const Auth = () => {
             <button onClick={async () => {
 
                 try {
+                    alert("a")
                     await signInWithPopup(auth, googleProvider)
                     alert("Successfully Submitted")
                 }
