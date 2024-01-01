@@ -1,5 +1,5 @@
 import { auth, googleProvider } from "./firebase";
-import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithRedirect, getRedirectResult, signOut } from 'firebase/auth'
 import { useState, useEffect } from "react";
 import { db, storage } from './firebase';
 import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
