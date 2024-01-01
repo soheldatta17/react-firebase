@@ -1,5 +1,5 @@
 import { auth, googleProvider } from "./firebase";
-import { createUserWithEmailAndPassword, signInWithRedirect, getRedirectResult, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import { useState, useEffect } from "react";
 import { db, storage } from './firebase';
 import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
@@ -32,36 +32,36 @@ export const Auth = () => {
     const imageListRef = ref(storage, `projectFiles/`)
     const fetchAndSetImageList = async () => {
         try {
-            const response = await listAll(imageListRef);
+          const response = await listAll(imageListRef);
+      
+          // Use a temporary array to collect image URLs
+          const tempImageList = [];
+      
+          const promises = response.items.map(async (item) => {
+            const url = await getDownloadURL(item);
+            tempImageList.push(url);
+          });
+      
+          // Wait for all promises to resolve
+          await Promise.all(promises);
+      
+          // After all promises are resolved, update the state once
+          setImageList(tempImageList);
 
-            // Use a temporary array to collect image URLs
-            const tempImageList = [];
-
-            const promises = response.items.map(async (item) => {
-                const url = await getDownloadURL(item);
-                tempImageList.push(url);
-            });
-
-            // Wait for all promises to resolve
-            await Promise.all(promises);
-
-            // After all promises are resolved, update the state once
-            setImageList(tempImageList);
-
-            console.log(imageList);
+          console.log(imageList);
         } catch (error) {
-            console.error('Error fetching and setting image list:', error);
+          console.error('Error fetching and setting image list:', error);
         }
-    };
-
-    // Call the function when needed
-    useEffect(() => {
+      };
+      
+      // Call the function when needed
+      useEffect(() => {
 
         fetchAndSetImageList();
-
+      
         getmovies();
-    }, []);
-
+      }, []);
+        
 
     return (
         <div>
@@ -158,23 +158,13 @@ export const Auth = () => {
             <button onClick={async () => {
 
                 try {
-                    alert("a");
-
-                    // Start the Google sign-in process
-                    await signInWithRedirect(auth, googleProvider);
-
-                    // This line might not be necessary, but you can use it to check for the redirect result immediately
-                    const result = await getRedirectResult(auth);
-
-                    if (result.user) {
-                        // User signed in successfully
-                        alert("Successfully Submitted");
-                    }
-
-                } catch (err) {
+                    alert("a")
+                    await signInWithPopup(auth, googleProvider)
+                    alert("Successfully Submitted")
+                }
+                catch (err) {
                     console.error(err);
                 }
-
 
             }}>Sign In with Google</button>
             <button onClick={async () => {
