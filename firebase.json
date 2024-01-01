@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "hey123-c",
     "public": "build",
     "ignore": [
       "firebase.json",
