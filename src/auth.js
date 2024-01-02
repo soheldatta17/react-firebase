@@ -2,7 +2,7 @@ import { auth, googleProvider } from "./firebase";
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import { useState, useEffect } from "react";
 import { db, storage } from './firebase';
-import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { getDocs, collection, addDoc, deleteDoc, doc,onSnapshot } from 'firebase/firestore';
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 export const Auth = () => {
     const [Email, setEmail] = useState("")
@@ -30,6 +30,29 @@ export const Auth = () => {
         catch (err) { console.error(err) }
     }
     const imageListRef = ref(storage, `projectFiles/`)
+    // const fetchAndSetImageList = async () => {
+    //     try {
+    //       const response = await listAll(imageListRef);
+      
+    //       // Use a temporary array to collect image URLs
+    //       const tempImageList = [];
+      
+    //       const promises = response.items.map(async (item) => {
+    //         const url = await getDownloadURL(item);
+    //         tempImageList.push(url);
+    //       });
+      
+    //       // Wait for all promises to resolve
+    //       await Promise.all(promises);
+      
+    //       // After all promises are resolved, update the state once
+    //       setImageList(tempImageList);
+
+    //       console.log(tempImageList);
+    //     } catch (error) {
+    //       console.error('Error fetching and setting image list:', error);
+    //     }
+    //   };
     const fetchAndSetImageList = async () => {
         try {
           const response = await listAll(imageListRef);
@@ -47,12 +70,20 @@ export const Auth = () => {
       
           // After all promises are resolved, update the state once
           setImageList(tempImageList);
-
-          console.log(imageList);
+      
+          // Listen for real-time updates
+           /* Your Firestore images collection reference */
+          onSnapshot(imageListRef, (snapshot) => {
+            const updatedImageList = snapshot.docs.map((doc) => doc.data().url);
+            setImageList(updatedImageList);
+          });
+      
+          console.log(tempImageList);
         } catch (error) {
           console.error('Error fetching and setting image list:', error);
         }
       };
+      
       
       // Call the function when needed
       useEffect(() => {
