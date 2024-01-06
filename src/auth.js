@@ -5,31 +5,54 @@ import { db, storage } from './firebase';
 import { getDocs, collection, addDoc, deleteDoc, doc,onSnapshot } from 'firebase/firestore';
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 export const Auth = () => {
-    const [Email, setEmail] = useState("")
-    const [Password, setPassword] = useState("")
-    const [moviesList, setMoviesList] = useState([])
-    const [movies, setMovies] = useState("")
-    const [date, setDate] = useState(0)
-    const [oscar, setOscar] = useState(false)
-    const [show, setShow] = useState(false)
-    const [fileupload, setFileupload] = useState(null)
-    const [imageList, setImageList] = useState([])
+    // const [Email, setEmail] = useState("")
+    // const [Password, setPassword] = useState("")
+    // const [moviesList, setMoviesList] = useState([])
+    // const [movies, setMovies] = useState("")
+    // const [date, setDate] = useState(0)
+    // const [oscar, setOscar] = useState(false)
     // const [show, setShow] = useState(false)
-    const moviesCollectionRef = collection(db, "movies")
-    const getmovies = async () => {
-        try {
-            const data = await getDocs(moviesCollectionRef)
-            // setMoviesList(data)
-            const filteredData = data.docs.map((doc) => ({
-                ...doc.data(),
-                id: doc.id,
-            }))
-            // console.log(filteredData)
-            setMoviesList(filteredData)
-        }
-        catch (err) { console.error(err) }
-    }
-    const imageListRef = ref(storage, `projectFiles/`)
+    // const [fileupload, setFileupload] = useState(null)
+    // const [imageList, setImageList] = useState([])
+    // // const [show, setShow] = useState(false)
+    // const moviesCollectionRef = collection(db, "movies")
+    // const getmovies = async () => {
+    //     try {
+    //         const data = await getDocs(moviesCollectionRef)
+    //         // setMoviesList(data)
+    //         const filteredData = data.docs.map((doc) => ({
+    //             ...doc.data(),
+    //             id: doc.id,
+    //         }))
+    //         // console.log(filteredData)
+    //         setMoviesList(filteredData)
+    //     }
+    //     catch (err) { console.error(err) }
+    // }
+    // const imageListRef = ref(storage, `projectFiles/`)
+    // // const fetchAndSetImageList = async () => {
+    // //     try {
+    // //       const response = await listAll(imageListRef);
+      
+    // //       // Use a temporary array to collect image URLs
+    // //       const tempImageList = [];
+      
+    // //       const promises = response.items.map(async (item) => {
+    // //         const url = await getDownloadURL(item);
+    // //         tempImageList.push(url);
+    // //       });
+      
+    // //       // Wait for all promises to resolve
+    // //       await Promise.all(promises);
+      
+    // //       // After all promises are resolved, update the state once
+    // //       setImageList(tempImageList);
+
+    // //       console.log(tempImageList);
+    // //     } catch (error) {
+    // //       console.error('Error fetching and setting image list:', error);
+    // //     }
+    // //   };
     // const fetchAndSetImageList = async () => {
     //     try {
     //       const response = await listAll(imageListRef);
@@ -47,51 +70,28 @@ export const Auth = () => {
       
     //       // After all promises are resolved, update the state once
     //       setImageList(tempImageList);
-
+      
+    //       // Listen for real-time updates
+    //        /* Your Firestore images collection reference */
+    //       onSnapshot(imageListRef, (snapshot) => {
+    //         const updatedImageList = snapshot.docs.map((doc) => doc.data().url);
+    //         setImageList(updatedImageList);
+    //       });
+      
     //       console.log(tempImageList);
     //     } catch (error) {
     //       console.error('Error fetching and setting image list:', error);
     //     }
     //   };
-    const fetchAndSetImageList = async () => {
-        try {
-          const response = await listAll(imageListRef);
-      
-          // Use a temporary array to collect image URLs
-          const tempImageList = [];
-      
-          const promises = response.items.map(async (item) => {
-            const url = await getDownloadURL(item);
-            tempImageList.push(url);
-          });
-      
-          // Wait for all promises to resolve
-          await Promise.all(promises);
-      
-          // After all promises are resolved, update the state once
-          setImageList(tempImageList);
-      
-          // Listen for real-time updates
-           /* Your Firestore images collection reference */
-          onSnapshot(imageListRef, (snapshot) => {
-            const updatedImageList = snapshot.docs.map((doc) => doc.data().url);
-            setImageList(updatedImageList);
-          });
-      
-          console.log(tempImageList);
-        } catch (error) {
-          console.error('Error fetching and setting image list:', error);
-        }
-      };
       
       
-      // Call the function when needed
-      useEffect(() => {
+    //   // Call the function when needed
+    //   useEffect(() => {
 
-        fetchAndSetImageList();
+    //     fetchAndSetImageList();
       
-        getmovies();
-      }, []);
+    //     getmovies();
+    //   }, []);
         
 
     return (
