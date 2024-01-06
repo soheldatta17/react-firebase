@@ -10,7 +10,7 @@ import { Auth } from './auth';
 
 function A()
 { 
-  return <div className='app'><Auth/></div>
+  return <div><Auth/></div>
 }
 
 export default memo(A);
